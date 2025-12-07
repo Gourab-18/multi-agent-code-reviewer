@@ -1,3 +1,7 @@
+<img width="739" height="398" alt="Screenshot 2025-12-07 at 5 20 22 PM" src="https://github.com/user-attachments/assets/67c04633-4907-40ce-9951-0aa0d1960250" />
+<img width="742" height="401" alt="Screenshot 2025-12-07 at 5 20 11 PM" src="https://github.com/user-attachments/assets/d11441c8-f27a-479d-aacf-f078545fd0da" />
+<img width="1468" height="725" alt="Screenshot 2025-12-07 at 5 19 29 PM" src="https://github.com/user-attachments/assets/74ef833a-191d-4ce2-9b7b-3583236c8e65" />
+<img width="738" height="400" alt="Screenshot 2025-12-07 at 5 19 17 PM" src="https://github.com/user-attachments/assets/c678db4f-8e0b-4750-9f65-b310d4ec7678" />
 # Multi-Agent Code Reviewer
 
 An intelligent, full-stack code review assistant powered by LLMs (OpenAI/Groq), LangGraph, and RAG. It employs multiple specialized agents to analyze code for security, performance, and quality issues, resolving conflicts to provide a unified, actionable report.
