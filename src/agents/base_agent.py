@@ -49,6 +49,11 @@ class BaseReviewAgent(ABC):
         """Returns the category this agent specializes from (security, performance, quality)."""
         pass
 
+    def _add_line_numbers(self, code: str) -> str:
+        lines = code.split('\n')
+        numbered_lines = [f"{i+1}: {line}" for i, line in enumerate(lines)]
+        return '\n'.join(numbered_lines)
+
     def review(self, code: str, file_path: str) -> AgentReview:
         """
         Main method to perform a review on a piece of code.
@@ -122,18 +127,23 @@ You are reviewing the file: {file_path}
 {tool_outputs}
 
 Instructions:
-1. Analyze the provided code.
+1. Analyze the provided code (Line numbers are provided with the code).
 2. Consider the automated tool findings and the knowledge base guidelines.
 3. Identify specific issues related to your specialty ({self.get_category()}).
 4. Provide actionable suggestions.
 5. Rate your confidence.
 6. Return the output STRICTLY matching the 'AgentReview' schema.
+7. CRITICAL: Provide the EXACT line number where the issue occurs.
 """
+        
+        # Prepare code with line numbers
+        numbered_code = self._add_line_numbers(code)
         
         messages = [
             SystemMessage(content=full_prompt),
-            HumanMessage(content=f"Code to review:\n\n{code}")
+            HumanMessage(content=f"Code to review:\n\n{numbered_code}")
         ]
+
 
         # 4. Invoke LLM with Structured Output
         # Note: We are putting the 'agent_name' in the prompt/system message, 
