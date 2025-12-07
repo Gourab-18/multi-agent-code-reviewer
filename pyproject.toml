@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "multi-agent-code-reviewer"
+version = "0.1.0"
+description = "A multi-agent code reviewer using LangChain and LangGraph"
+authors = ["User <user@example.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+langchain = "^0.1.0"
+langgraph = "^0.0.10"
+langchain-openai = "^0.0.5"
+chromadb = "^0.4.22"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0"
+tree-sitter = "^0.20.4"
+tree-sitter-python = "^0.20.4"
+tree-sitter-javascript = "^0.20.4"
+pydantic = "^2.6.0"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
